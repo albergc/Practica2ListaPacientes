@@ -1,10 +1,10 @@
 
 class Nodo {
 
-    private int dato;
+    private Paciente dato;
     private Nodo siguiente;
 
-    public Nodo(int dato, Nodo siguiente) {
+    public Nodo(Paciente dato, Nodo siguiente) {
         this.dato = dato;
         this.siguiente = siguiente;
     }
@@ -17,11 +17,11 @@ class Nodo {
         this.siguiente = siguiente;
     }
 
-    public int getDato() {
+    public Paciente getDato() {
         return dato;
     }
 
-    public void setDato(int dato) {
+    public void setDato(Paciente dato) {
         this.dato = dato;
     }
 }

@@ -9,8 +9,8 @@ class Iterador {
         return actual != null;
     }
 
-    public int next() {
-        int resultado = actual.getDato();
+    public Paciente next() {
+        Paciente resultado = actual.getDato();
         actual = actual.getSiguiente();
         return resultado;
     }
