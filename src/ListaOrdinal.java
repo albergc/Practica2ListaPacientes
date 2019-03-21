@@ -130,7 +130,34 @@ class ListaOrdinal {
 
     public void borrarAltas(){
 
+            Nodo actual = inicio;
+            Nodo anterior = null;
+
+            while (actual != null ) {
+                if(!actual.getDato().estaAlta()){
+                    anterior=actual;
+                    actual=actual.getSiguiente();
+                }
+                else{
+                    if(actual==inicio){
+                        inicio=actual.getSiguiente();
+                        actual=inicio;
+                    }
+                    else if(actual==fin){
+
+                        fin=anterior;
+
+                    }
+                    else{
+                        anterior.setSiguiente(actual.getSiguiente());
+                        actual=actual.getSiguiente();
+                    }
+                }
+            }
+        }
+
+
     }
 
 
-}
+

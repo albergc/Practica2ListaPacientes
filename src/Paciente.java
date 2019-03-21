@@ -14,6 +14,7 @@ public class Paciente {
         this.estado = "hospitalizado";
     }
 
+
     public String getNombre() {
         return nombre;
     }
