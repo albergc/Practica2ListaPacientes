@@ -11,14 +11,33 @@ public class Aplicacion {
         lista.insertar(p2);
         lista.insertar(p3);
         lista.insertar(p4);
-        p2.darAlta();
-        p3.darAlta();
+        p1.darAlta();
+        p4.darAlta();
+        verAltas(lista);
+        Iterador iterador = pacienteSintoma(lista,"mas").obtenerIterador();
 
-        lista.borrarAltas();
-        Iterador iterador = lista.obtenerIterador();
         while(iterador.hasNext()){
             iterador.next().verPaciente();
         }
 
 
-    }}
+    }
+    public static  ListaOrdinal pacienteSintoma(ListaOrdinal lista, String sintoma){
+        ListaOrdinal l1 = new ListaOrdinal();
+        for (int i = 0; i < lista.tamaño(); i++) {
+            if(lista.get(i).getSintomas().indexOf(sintoma)>-1){
+                l1.insertar(lista.get(i));
+            }
+        }
+        return l1;
+    }
+
+
+    public static void verAltas(ListaOrdinal lista){
+        int aux= lista.tamaño();
+        for (int i = 0; i < aux; i++) {
+            if(lista.get(i).estaAlta()){lista.get(i).verPaciente();}
+        }
+
+    }
+}
